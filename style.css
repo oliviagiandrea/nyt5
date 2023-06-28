@@ -1,0 +1,186 @@
+:root {
+  --red: #df321b;
+  --gray: #e4e3dd;
+}
+
+body {
+  min-width: 450px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quattrocento', serif;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info {
+  width: 80%;
+  text-align: center;
+}
+
+.logo {
+  max-width: 15%;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 80%;
+}
+
+@media (max-width: 800px) {
+  .stats-container {
+    flex-wrap: wrap;
+  }
+}
+
+button:hover,
+.recipe-card:hover {
+  cursor: pointer;
+  outline: 3px solid var(--red);
+}
+
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--gray);
+  border-radius: 7px;
+  padding: 3%;
+  margin: 1%;
+  width: 100%;
+  text-align: center;
+}
+
+.stats-card h3 {
+  margin-block-start: 0;
+  margin-block-end: 0.4rem;
+}
+
+.stats-card p {
+  margin: 0;
+}
+
+#num-recipes,
+#avg-ratings,
+#total-ratings {
+  font-size: 3rem !important;
+}
+
+#recipes-container {
+  background-color: var(--gray);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipe-img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.recipe-card {
+  background-color: #fff;
+  padding: 2%;
+  margin: 1%;
+  width: 300px;
+  text-align: center;
+  border-radius: 7px;
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: #000 !important;
+}
+
+.recipe-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.recipe-link b {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  margin-bottom: 1rem;
+  width: 40%;
+}
+
+label {
+    width: 40%;
+    padding-right: 0.5rem;
+}
+
+input {
+  border-radius: 5px;
+  padding: 0.75rem;
+  margin-right: 0.25rem;
+  width: 60%;
+}
+
+@media (max-width: 900px) {
+  .search {
+    width: 60%;
+  }
+}
+
+#button-container {
+  text-align: center;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+
+button {
+  font-family: 'Quattrocento', serif;
+  font-size: 1rem;
+  background-color: var(--gray);
+  border: none;
+  padding: 2% 4%;
+  margin: 1%;
+  border-radius: 7px;
+}
+
+/* dark gray  --> #758190 */
+/* light gray --> #a8b0bc */
+/* white      --> #e4e3dd */

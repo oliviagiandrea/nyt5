@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/x-icon" href="/assets/icon.png">
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Quattrocento:wght@400;700&display=swap"
+    rel="stylesheet">
+  <title>NYT's 5 Star Recipes</title>
+</head>
+
+<body>
+  <main>
+    <div class="content">
+      <!-- background info about company -->
+      <section id="about-section">
+        <div class="row info">
+          <img class="logo" alt="NYT 5 Star logo" src="assets/logo.png" />
+        </div>
+        <div class="row info">
+          <h1>Exploring NYT's 5 Star Recipes</h1>
+        </div>
+        <div class="row info">
+          <div id="description-container">
+            <p>
+              Although NYT Cooking allows users to explore their impressive variety of recipes with categorical filters, users are unable to filter published recipes by rating. I wanted to find NYT's best of the best, so I scraped NYT's published recipes with 5-star ratings (using R, most recently on Jun 26, 2023), then created this site to further explore these favorites. 
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- top recipes & other interesting stats -->
+      <section id="stats-section">
+        <div class="row">
+          <h1>Stats</h1>
+        </div>
+        <div class="row">
+          <div class="stats-container">
+            <div class="stats-card">
+              <h2>Total Number of Recipes</h2>
+              <h3 id="num-recipes"></h3>
+            </div>
+            <div class="stats-card">
+              <h2>Average Number of Ratings per Recipe</h2>
+              <h3 id="avg-ratings"></h3>
+            </div>
+            <div class="stats-card">
+              <h2>Total Number of Ratings</h2>
+              <h3 id="total-ratings"></h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- list of recipes published by NYT -->
+      <section id="recipes-section">
+        <h2>Recipes</h2>
+        <div class="search">
+          <label for="search">Search Recipe Titles:</label>
+          <input id="search" type="text" placeholder="Type Title Here" name="search" />
+        </div>
+        <div id="button-container">
+          <button id="all-btn">Show All Recipes</button>
+          <button id="rated-btn">Show Recipes with >= 1000 Ratings</button>
+          <br />
+          <button id="breakfast-btn">Breakfast</button>
+          <button id="mains-btn">Mains</button>
+          <button id="dessert-btn">Dessert</button>
+          <button id="sides-btn">Sides</button>
+          <button id="bread-btn">Bread</button>
+        </div>
+        <div id="recipes-container"></div>
+      </section>
+    </div>
+  </main>
+
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>
