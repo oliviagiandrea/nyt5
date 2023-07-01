@@ -103,6 +103,9 @@ document.getElementById("sides-btn").addEventListener("click", function () {
 document.getElementById("bread-btn").addEventListener("click", function () {
   filterCategory('Breads');
 });
+document.getElementById("vegan-btn").addEventListener("click", function () {
+  filterCategory('Vegan');
+});
 document.getElementById("all-btn").addEventListener("click", function () {
   showAllRecipes();
 });
