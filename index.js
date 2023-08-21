@@ -11,9 +11,12 @@ function deleteChildElements(parent) {
 /*************************************************************************************
  * add all data from recipes array to page
 */
+let recipe_count = 0;
+
 const recipesContainer = document.getElementById("recipes-container");
-function addRecipesToPage(recipes) {
-  recipes.forEach(recipe => {
+function addRecipesToPage(recipes, end_index) {
+  recipe_count = end_index + 1;
+  recipes.slice(0, end_index).forEach(recipe => {
     let card = document.createElement('div');
     card.classList.add('recipe-card')
 
@@ -27,7 +30,7 @@ function addRecipesToPage(recipes) {
     recipesContainer.appendChild(card);
   });
 }
-addRecipesToPage(recipe_json);
+addRecipesToPage(recipe_json, 24);
 
 // /*************************************************************************************
 //  * create summary statistics at the top of the page
@@ -81,35 +84,50 @@ function filterCategory(category) {
 // show all recipes
 function showAllRecipes() {
   deleteChildElements(recipesContainer);
-  addRecipesToPage(recipe_json);
+  addRecipesToPage(recipe_json, 24);
 }
+
+/************************************************************************************
+ * pagination
+*/
+const show_more_btn = document.getElementById("show-more-btn")
+show_more_btn.addEventListener("click", function () {
+  addRecipesToPage(recipe_json, recipe_count + 15);
+});
 
 // add event listeners with the correct function to each button
 document.getElementById("rated-btn").addEventListener("click", function () {
-  filterRatingAmounts(1000);
+  filterRatingAmounts(5000);
+  show_more_btn.style.display = "none";
 });
 document.getElementById("breakfast-btn").addEventListener("click", function () {
   filterCategory('Breakfast');
+  show_more_btn.style.display = "none";
 });
 document.getElementById("mains-btn").addEventListener("click", function () {
   filterCategory('Main Course');
+  show_more_btn.style.display = "none";
 });
 document.getElementById("dessert-btn").addEventListener("click", function () {
   filterCategory('Dessert');
+  show_more_btn.style.display = "none";
 });
 document.getElementById("sides-btn").addEventListener("click", function () {
   filterCategory('Side Dish');
+  show_more_btn.style.display = "none";
 });
 document.getElementById("bread-btn").addEventListener("click", function () {
   filterCategory('Breads');
+  show_more_btn.style.display = "none";
 });
 document.getElementById("vegan-btn").addEventListener("click", function () {
   filterCategory('Vegan');
+  show_more_btn.style.display = "none";
 });
 document.getElementById("all-btn").addEventListener("click", function () {
   showAllRecipes();
+  show_more_btn.style.display = "block";
 });
-
 
 /************************************************************************************
  * Searching recipe titles logic
